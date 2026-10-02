@@ -17,7 +17,7 @@ async function fetchAPI(endpoint: string, options: RequestInit = {}) {
 }
 
 export const api = {
-  startScan: (): Promise<{ scanId: string }> => fetchAPI('/api/scans', { method: 'POST' }),
+  startScan: (): Promise<{ scan_id: string }> => fetchAPI('/api/scans', { method: 'POST' }),
   getScan: (id: string): Promise<ScanResult> => fetchAPI(`/api/scans/${id}`),
   getLatestScan: (): Promise<ScanResult> => fetchAPI('/api/scans/latest'),
   getScans: (): Promise<ScanSummary[]> => fetchAPI('/api/scans').then(res => res.scans),
