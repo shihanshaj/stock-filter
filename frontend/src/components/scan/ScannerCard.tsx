@@ -13,9 +13,9 @@ export default function ScannerCard({ onScanStart }: { onScanStart: (id: string)
       setLoading(true);
       const res = await api.startScan();
       onScanStart(res.scan_id);
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      alert("Failed to start scan");
+      alert(`Failed to start scan.\nError: ${error.message}\nURL: ${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}`);
     } finally {
       setLoading(false);
     }
