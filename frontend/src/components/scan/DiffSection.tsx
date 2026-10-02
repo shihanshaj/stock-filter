@@ -1,7 +1,7 @@
 "use client";
 
 import { ScanDiff } from "@/lib/types";
-import StockCard from "./StockCard";
+import StockCard from "../results/StockCard";
 
 export default function DiffSection({ diff }: { diff: ScanDiff }) {
   if (!diff || (diff.newStocks.length === 0 && diff.removedStocks.length === 0)) return null;
